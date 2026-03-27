@@ -36,3 +36,5 @@ features:
 - 出力寸法
 
 今後は、ここに fidelity や render-back 指標を重ねていく想定です。
+
+現在の VTracer ベースラインから公開している SVG サンプルは [レポート](/ja/reports) ページで確認できます。

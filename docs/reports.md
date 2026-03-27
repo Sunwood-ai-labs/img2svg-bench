@@ -9,21 +9,28 @@
 
 The report is meant for fast review and contains embedded SVG snippets for each candidate.
 
-## Published sample gallery
+## Published Sample Results
 
-The repository also checks in a small set of representative SVG outputs under `docs/public/results/` so the public README and docs can show real generated results without relying on ignored local artifacts.
+These repo-managed SVGs are representative outputs from the current VTracer baseline. Because `output/` is ignored, the examples below are copied into `docs/public/results/` for GitHub Pages publishing.
 
-| Sample A / clean | Sample A / poster |
+| kiyoka_1 / clean | kiyoka_1 / poster |
 | --- | --- |
-| ![Sample A clean](/results/sample-a-clean.svg) | ![Sample A poster](/results/sample-a-poster.svg) |
+| ![kiyoka_1 clean](/results/kiyoka-1-clean.svg) | ![kiyoka_1 poster](/results/kiyoka-1-poster.svg) |
 | `129.7 KB` / `93 paths` / `1.30 s` | `61.1 KB` / `36 paths` / `0.44 s` |
 
-| Sample B / clean | Sample B / poster |
+| kiyoka_2 / clean | kiyoka_2 / poster |
 | --- | --- |
-| ![Sample B clean](/results/sample-b-clean.svg) | ![Sample B poster](/results/sample-b-poster.svg) |
+| ![kiyoka_2 clean](/results/kiyoka-2-clean.svg) | ![kiyoka_2 poster](/results/kiyoka-2-poster.svg) |
 | `210.0 KB` / `123 paths` / `0.84 s` | `108.2 KB` / `46 paths` / `0.51 s` |
 
 These published samples are intentionally compact. Use the locally generated `report.md` to inspect the full preset matrix.
+
+## More Published Variants
+
+- [kiyoka_1 detail](/results/kiyoka-1-detail.svg): `detail / 1.63 MB / 3268 paths / 11.29 s`
+- [kiyoka_1 binary_ink](/results/kiyoka-1-binary-ink.svg): `binary_ink / 219.8 KB / 8 paths / 0.20 s`
+- [kiyoka_2 detail](/results/kiyoka-2-detail.svg): `detail / 2.07 MB / 3884 paths / 13.65 s`
+- [kiyoka_2 binary_ink](/results/kiyoka-2-binary-ink.svg): `binary_ink / 40.2 KB / 9 paths / 0.18 s`
 
 ## Folder layout
 

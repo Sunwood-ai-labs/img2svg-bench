@@ -36,3 +36,5 @@ features:
 - output dimensions
 
 The project is designed to grow from a strong baseline into a broader benchmark system for tools, datasets, and evaluation methods.
+
+See the [Reports](/reports) page for published SVG examples from the current VTracer baseline.

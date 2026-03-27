@@ -46,29 +46,29 @@
 - ローカル画像や生成物を Git に含めない安全設計
 - GitHub Pages 前提の公開ドキュメント
 
-## 🖼 公開サンプル結果
-現時点の VTracer サンプル実行から、代表 SVG をリポジトリ内にそのまま掲載しています。
+## 🖼 生成結果サンプル
+以下は、現在の VTracer ベースラインから公開用に切り出した代表 SVG です。元の実験出力は `output/` 配下にあるため、GitHub と Pages で確実に表示できるように `docs/public/results/` へ複製したものを載せています。
 
 <table>
   <tr>
-    <th>Sample A / clean</th>
-    <th>Sample A / poster</th>
+    <th>kiyoka_1 / clean</th>
+    <th>kiyoka_1 / poster</th>
   </tr>
   <tr>
-    <td><img src="./docs/public/results/sample-a-clean.svg" width="220" alt="Sample A clean SVG result" /></td>
-    <td><img src="./docs/public/results/sample-a-poster.svg" width="220" alt="Sample A poster SVG result" /></td>
+    <td><img src="./docs/public/results/kiyoka-1-clean.svg" width="220" alt="kiyoka 1 の clean プリセット公開サンプル" /></td>
+    <td><img src="./docs/public/results/kiyoka-1-poster.svg" width="220" alt="kiyoka 1 の poster プリセット公開サンプル" /></td>
   </tr>
   <tr>
     <td><code>129.7 KB</code> / <code>93 paths</code> / <code>1.30 s</code></td>
     <td><code>61.1 KB</code> / <code>36 paths</code> / <code>0.44 s</code></td>
   </tr>
   <tr>
-    <th>Sample B / clean</th>
-    <th>Sample B / poster</th>
+    <th>kiyoka_2 / clean</th>
+    <th>kiyoka_2 / poster</th>
   </tr>
   <tr>
-    <td><img src="./docs/public/results/sample-b-clean.svg" width="220" alt="Sample B clean SVG result" /></td>
-    <td><img src="./docs/public/results/sample-b-poster.svg" width="220" alt="Sample B poster SVG result" /></td>
+    <td><img src="./docs/public/results/kiyoka-2-clean.svg" width="220" alt="kiyoka 2 の clean プリセット公開サンプル" /></td>
+    <td><img src="./docs/public/results/kiyoka-2-poster.svg" width="220" alt="kiyoka 2 の poster プリセット公開サンプル" /></td>
   </tr>
   <tr>
     <td><code>210.0 KB</code> / <code>123 paths</code> / <code>0.84 s</code></td>
@@ -76,7 +76,7 @@
   </tr>
 </table>
 
-詳しい説明と公開ギャラリーは [レポートページ](./docs/ja/reports.md) にまとめています。
+[レポート docs](./docs/ja/reports.md) には、`detail` と `binary_ink` の公開リンクも載せています。
 
 ## 🚀 クイックスタート
 依存関係を入れます。

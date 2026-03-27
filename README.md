@@ -46,29 +46,29 @@ This repository focuses on that benchmark loop:
 - local-first workflow that keeps private inputs and generated artifacts out of Git by default
 - GitHub Pages-ready docs for public project onboarding
 
-## 🖼 Example Results
-Representative SVGs from the current repo-managed VTracer sample run are published directly in this repository.
+## 🖼 Generated Result Samples
+These tracked SVGs are representative published outputs from the current VTracer baseline. The original experiment outputs live under `output/`, so the samples below are copied into `docs/public/results/` for GitHub and Pages rendering.
 
 <table>
   <tr>
-    <th>Sample A / clean</th>
-    <th>Sample A / poster</th>
+    <th>kiyoka_1 / clean</th>
+    <th>kiyoka_1 / poster</th>
   </tr>
   <tr>
-    <td><img src="./docs/public/results/sample-a-clean.svg" width="220" alt="Sample A clean SVG result" /></td>
-    <td><img src="./docs/public/results/sample-a-poster.svg" width="220" alt="Sample A poster SVG result" /></td>
+    <td><img src="./docs/public/results/kiyoka-1-clean.svg" width="220" alt="Published VTracer clean sample for kiyoka 1" /></td>
+    <td><img src="./docs/public/results/kiyoka-1-poster.svg" width="220" alt="Published VTracer poster sample for kiyoka 1" /></td>
   </tr>
   <tr>
     <td><code>129.7 KB</code> / <code>93 paths</code> / <code>1.30 s</code></td>
     <td><code>61.1 KB</code> / <code>36 paths</code> / <code>0.44 s</code></td>
   </tr>
   <tr>
-    <th>Sample B / clean</th>
-    <th>Sample B / poster</th>
+    <th>kiyoka_2 / clean</th>
+    <th>kiyoka_2 / poster</th>
   </tr>
   <tr>
-    <td><img src="./docs/public/results/sample-b-clean.svg" width="220" alt="Sample B clean SVG result" /></td>
-    <td><img src="./docs/public/results/sample-b-poster.svg" width="220" alt="Sample B poster SVG result" /></td>
+    <td><img src="./docs/public/results/kiyoka-2-clean.svg" width="220" alt="Published VTracer clean sample for kiyoka 2" /></td>
+    <td><img src="./docs/public/results/kiyoka-2-poster.svg" width="220" alt="Published VTracer poster sample for kiyoka 2" /></td>
   </tr>
   <tr>
     <td><code>210.0 KB</code> / <code>123 paths</code> / <code>0.84 s</code></td>
@@ -76,7 +76,7 @@ Representative SVGs from the current repo-managed VTracer sample run are publish
   </tr>
 </table>
 
-The full explanation and public sample gallery live on the [reports page](./docs/reports.md).
+See the [Reports docs](./docs/reports.md) for linked `detail` and `binary_ink` variants.
 
 ## 🚀 Quick Start
 Install dependencies:
