@@ -46,6 +46,38 @@
 - ローカル画像や生成物を Git に含めない安全設計
 - GitHub Pages 前提の公開ドキュメント
 
+## 🖼 公開サンプル結果
+現時点の VTracer サンプル実行から、代表 SVG をリポジトリ内にそのまま掲載しています。
+
+<table>
+  <tr>
+    <th>Sample A / clean</th>
+    <th>Sample A / poster</th>
+  </tr>
+  <tr>
+    <td><img src="./docs/public/results/sample-a-clean.svg" width="220" alt="Sample A clean SVG result" /></td>
+    <td><img src="./docs/public/results/sample-a-poster.svg" width="220" alt="Sample A poster SVG result" /></td>
+  </tr>
+  <tr>
+    <td><code>129.7 KB</code> / <code>93 paths</code> / <code>1.30 s</code></td>
+    <td><code>61.1 KB</code> / <code>36 paths</code> / <code>0.44 s</code></td>
+  </tr>
+  <tr>
+    <th>Sample B / clean</th>
+    <th>Sample B / poster</th>
+  </tr>
+  <tr>
+    <td><img src="./docs/public/results/sample-b-clean.svg" width="220" alt="Sample B clean SVG result" /></td>
+    <td><img src="./docs/public/results/sample-b-poster.svg" width="220" alt="Sample B poster SVG result" /></td>
+  </tr>
+  <tr>
+    <td><code>210.0 KB</code> / <code>123 paths</code> / <code>0.84 s</code></td>
+    <td><code>108.2 KB</code> / <code>46 paths</code> / <code>0.51 s</code></td>
+  </tr>
+</table>
+
+詳しい説明と公開ギャラリーは [レポートページ](./docs/ja/reports.md) にまとめています。
+
 ## 🚀 クイックスタート
 依存関係を入れます。
 
@@ -112,6 +144,7 @@ npm run docs:build
 ## 🧭 リポジトリ方針
 - ローカル生成物は `output/` に保存し、コミットしません
 - 私物画像や非公開画像はデフォルトで公開しません
+- README / docs 表示用に、代表 SVG だけを `docs/public/results/` へ限定して公開する場合があります
 - 手元の画像を持ち込んでローカルで比較できる構成を維持します
 
 ## ⚖️ ライセンス

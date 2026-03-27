@@ -9,6 +9,22 @@
 
 生成されたレポートを見開くと、プリセット別の結果を短時間で確認できます。
 
+## 公開サンプルギャラリー
+
+公開 README / docs でも実際の生成結果が見えるように、代表的な SVG を `docs/public/results/` に限定して同梱しています。
+
+| Sample A / clean | Sample A / poster |
+| --- | --- |
+| ![Sample A clean](/results/sample-a-clean.svg) | ![Sample A poster](/results/sample-a-poster.svg) |
+| `129.7 KB` / `93 paths` / `1.30 s` | `61.1 KB` / `36 paths` / `0.44 s` |
+
+| Sample B / clean | Sample B / poster |
+| --- | --- |
+| ![Sample B clean](/results/sample-b-clean.svg) | ![Sample B poster](/results/sample-b-poster.svg) |
+| `210.0 KB` / `123 paths` / `0.84 s` | `108.2 KB` / `46 paths` / `0.51 s` |
+
+ここに載せるのは軽量な代表例だけに留め、全プリセットの比較はローカル生成される `report.md` を参照する前提です。
+
 ## フォルダ構造
 
 想定例:
@@ -35,3 +51,4 @@ output/
 ## 監査可能性
 
 `experiment_summary.csv` と実験スクリプトは Git 管理し、画像や大容量生成物の共有は最小限にします。
+公開用の SVG も `docs/public/results/` に代表例だけを絞って保持します。

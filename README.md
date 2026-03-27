@@ -46,6 +46,38 @@ This repository focuses on that benchmark loop:
 - local-first workflow that keeps private inputs and generated artifacts out of Git by default
 - GitHub Pages-ready docs for public project onboarding
 
+## 🖼 Example Results
+Representative SVGs from the current repo-managed VTracer sample run are published directly in this repository.
+
+<table>
+  <tr>
+    <th>Sample A / clean</th>
+    <th>Sample A / poster</th>
+  </tr>
+  <tr>
+    <td><img src="./docs/public/results/sample-a-clean.svg" width="220" alt="Sample A clean SVG result" /></td>
+    <td><img src="./docs/public/results/sample-a-poster.svg" width="220" alt="Sample A poster SVG result" /></td>
+  </tr>
+  <tr>
+    <td><code>129.7 KB</code> / <code>93 paths</code> / <code>1.30 s</code></td>
+    <td><code>61.1 KB</code> / <code>36 paths</code> / <code>0.44 s</code></td>
+  </tr>
+  <tr>
+    <th>Sample B / clean</th>
+    <th>Sample B / poster</th>
+  </tr>
+  <tr>
+    <td><img src="./docs/public/results/sample-b-clean.svg" width="220" alt="Sample B clean SVG result" /></td>
+    <td><img src="./docs/public/results/sample-b-poster.svg" width="220" alt="Sample B poster SVG result" /></td>
+  </tr>
+  <tr>
+    <td><code>210.0 KB</code> / <code>123 paths</code> / <code>0.84 s</code></td>
+    <td><code>108.2 KB</code> / <code>46 paths</code> / <code>0.51 s</code></td>
+  </tr>
+</table>
+
+The full explanation and public sample gallery live on the [reports page](./docs/reports.md).
+
 ## 🚀 Quick Start
 Install dependencies:
 
@@ -112,6 +144,7 @@ These metrics are intentionally simple, but they make benchmark runs easy to com
 ## 🧭 Repository Policy
 - local benchmark artifacts live under `output/` and are not committed
 - local or private sample images are not published by default
+- a curated public SVG sample set may be committed under `docs/public/results/` for README and docs rendering
 - benchmark scripts are designed to run against your own local inputs
 
 ## ⚖️ License
