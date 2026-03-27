@@ -1,0 +1,50 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  validate-python:
+    name: Validate benchmark tooling
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+
+      - name: Setup uv
+        uses: astral-sh/setup-uv@v5
+        with:
+          enable-cache: true
+
+      - name: Install benchmark dependencies
+        run: uv sync --locked
+
+      - name: Verify script syntax
+        run: uv run python -m compileall -q scripts
+
+      - name: Validate CLI entrypoints
+        run: |
+          uv run python scripts/remove_edge_background.py --help
+          uv run python scripts/vtracer_experiments.py --help
+          uv run python scripts/build_vtracer_report.py --help
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: npm
+
+      - name: Install docs dependencies
+        run: npm ci
+
+      - name: Build docs
+        run: npm run docs:build
