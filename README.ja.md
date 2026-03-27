@@ -76,7 +76,12 @@
   </tr>
 </table>
 
-[レポート docs](./docs/ja/reports.md) には、`detail` と `binary_ink` の公開リンクも載せています。
+このリポジトリでは次の派生結果も公開しています。
+
+- `kiyoka_1`: [default](./docs/public/results/kiyoka-1-default.svg), [cutout](./docs/public/results/kiyoka-1-cutout.svg), [polygon](./docs/public/results/kiyoka-1-polygon.svg), [detail](./docs/public/results/kiyoka-1-detail.svg), [binary_ink](./docs/public/results/kiyoka-1-binary-ink.svg)
+- `kiyoka_2`: [default](./docs/public/results/kiyoka-2-default.svg), [cutout](./docs/public/results/kiyoka-2-cutout.svg), [polygon](./docs/public/results/kiyoka-2-polygon.svg), [detail](./docs/public/results/kiyoka-2-detail.svg), [binary_ink](./docs/public/results/kiyoka-2-binary-ink.svg)
+
+[レポート docs](./docs/ja/reports.md) には、全プリセットの公開一覧も載せています。
 
 ## 🚀 クイックスタート
 依存関係を入れます。

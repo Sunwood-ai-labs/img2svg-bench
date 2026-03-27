@@ -76,7 +76,12 @@ These tracked SVGs are representative published outputs from the current VTracer
   </tr>
 </table>
 
-See the [Reports docs](./docs/reports.md) for linked `detail` and `binary_ink` variants.
+Also published in this repository:
+
+- `kiyoka_1`: [default](./docs/public/results/kiyoka-1-default.svg), [cutout](./docs/public/results/kiyoka-1-cutout.svg), [polygon](./docs/public/results/kiyoka-1-polygon.svg), [detail](./docs/public/results/kiyoka-1-detail.svg), [binary_ink](./docs/public/results/kiyoka-1-binary-ink.svg)
+- `kiyoka_2`: [default](./docs/public/results/kiyoka-2-default.svg), [cutout](./docs/public/results/kiyoka-2-cutout.svg), [polygon](./docs/public/results/kiyoka-2-polygon.svg), [detail](./docs/public/results/kiyoka-2-detail.svg), [binary_ink](./docs/public/results/kiyoka-2-binary-ink.svg)
+
+See the [Reports docs](./docs/reports.md) for the full published preset matrix.
 
 ## 🚀 Quick Start
 Install dependencies:

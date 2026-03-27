@@ -25,12 +25,26 @@ These repo-managed SVGs are representative outputs from the current VTracer base
 
 These published samples are intentionally compact. Use the locally generated `report.md` to inspect the full preset matrix.
 
-## More Published Variants
+## Full Published Preset Matrix
 
-- [kiyoka_1 detail](/results/kiyoka-1-detail.svg): `detail / 1.63 MB / 3268 paths / 11.29 s`
-- [kiyoka_1 binary_ink](/results/kiyoka-1-binary-ink.svg): `binary_ink / 219.8 KB / 8 paths / 0.20 s`
-- [kiyoka_2 detail](/results/kiyoka-2-detail.svg): `detail / 2.07 MB / 3884 paths / 13.65 s`
-- [kiyoka_2 binary_ink](/results/kiyoka-2-binary-ink.svg): `binary_ink / 40.2 KB / 9 paths / 0.18 s`
+Every currently published preset variant is listed below.
+
+| Source | Preset | SVG | Size | Paths | Time |
+| --- | --- | --- | ---: | ---: | ---: |
+| `kiyoka_1` | `default` | [link](/results/kiyoka-1-default.svg) | 734.2 KB | 807 | 1.26 s |
+| `kiyoka_1` | `clean` | [link](/results/kiyoka-1-clean.svg) | 129.7 KB | 93 | 1.30 s |
+| `kiyoka_1` | `cutout` | [link](/results/kiyoka-1-cutout.svg) | 231.8 KB | 177 | 1.91 s |
+| `kiyoka_1` | `polygon` | [link](/results/kiyoka-1-polygon.svg) | 62.7 KB | 296 | 1.12 s |
+| `kiyoka_1` | `poster` | [link](/results/kiyoka-1-poster.svg) | 61.1 KB | 36 | 0.44 s |
+| `kiyoka_1` | `detail` | [link](/results/kiyoka-1-detail.svg) | 1672.0 KB | 3268 | 11.29 s |
+| `kiyoka_1` | `binary_ink` | [link](/results/kiyoka-1-binary-ink.svg) | 219.8 KB | 8 | 0.20 s |
+| `kiyoka_2` | `default` | [link](/results/kiyoka-2-default.svg) | 938.8 KB | 832 | 0.87 s |
+| `kiyoka_2` | `clean` | [link](/results/kiyoka-2-clean.svg) | 210.0 KB | 123 | 0.84 s |
+| `kiyoka_2` | `cutout` | [link](/results/kiyoka-2-cutout.svg) | 386.8 KB | 212 | 1.49 s |
+| `kiyoka_2` | `polygon` | [link](/results/kiyoka-2-polygon.svg) | 88.1 KB | 339 | 0.91 s |
+| `kiyoka_2` | `poster` | [link](/results/kiyoka-2-poster.svg) | 108.2 KB | 46 | 0.51 s |
+| `kiyoka_2` | `detail` | [link](/results/kiyoka-2-detail.svg) | 2121.9 KB | 3884 | 13.65 s |
+| `kiyoka_2` | `binary_ink` | [link](/results/kiyoka-2-binary-ink.svg) | 40.2 KB | 9 | 0.18 s |
 
 ## Folder layout
 
