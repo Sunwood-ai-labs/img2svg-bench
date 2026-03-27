@@ -1,46 +1,60 @@
-# img2svg-bench
+<div align="center">
+  <img src="./docs/public/logo.svg" alt="img2svg-bench logo" width="140" />
+  <h1>img2svg-bench</h1>
+  <p><strong>画像から SVG を作るツール・プリセット・前処理パイプラインを比較するための、ローカル実行型ベンチマークリポジトリです。</strong></p>
+  <p>
+    <a href="https://github.com/Sunwood-ai-labs/img2svg-bench/actions/workflows/ci.yml"><img src="https://github.com/Sunwood-ai-labs/img2svg-bench/actions/workflows/ci.yml/badge.svg" alt="CI" /></a>
+    <a href="https://sunwood-ai-labs.github.io/img2svg-bench/"><img src="https://img.shields.io/badge/docs-GitHub%20Pages-0f766e" alt="Docs" /></a>
+    <a href="./LICENSE"><img src="https://img.shields.io/badge/license-MIT-14b8a6" alt="MIT License" /></a>
+    <img src="https://img.shields.io/badge/python-3.11%2B-334155" alt="Python 3.11+" />
+    <img src="https://img.shields.io/badge/uv-managed-0ea5e9" alt="uv managed" />
+    <img src="https://img.shields.io/badge/docs-VitePress-f59e0b" alt="VitePress docs" />
+  </p>
+  <p>
+    <strong>Language:</strong>
+    <a href="./README.md">English</a> |
+    <a href="./README.ja.md">日本語</a>
+  </p>
+</div>
 
-[English](./README.md)
+## 🔍 概要
+`img2svg-bench` は、ラスタ画像から SVG を生成する処理を再現可能な形で比較するためのベンチマークリポジトリです。
 
-`img2svg-bench` は、画像から SVG を作るツールやプリセットを比較するためのローカル実行型ベンチマークリポジトリです。
-
-現状はまず VTracer ベースラインを再現可能にすることを重視しています。
+現時点では、VTracer ベースラインを中心に次の流れを整えています。
 
 - 明るい背景の簡易除去
-- 複数 VTracer プリセットの一括実行
-- CSV 集計
-- SVG を埋め込んだ Markdown レポート生成
+- 同一入力に対する複数プリセットの一括実行
+- 実行結果の CSV 集計
+- SVG を埋め込んだ Markdown 比較レポート
+- 英日両対応のドキュメント
 
-## 目的
+## 🎯 目的
+画像から SVG への変換は見た目で語られやすいですが、ベンチマークとして扱うなら入力・条件・出力指標を揃える必要があります。
 
-画像から SVG への変換は見た目で語られがちですが、ベンチマークにするなら入力・条件・出力指標を揃える必要があります。
-
-このリポジトリでは次の流れをスクリプト化します。
+このリポジトリは、次の比較ループをローカルで再現できるようにすることを目的としています。
 
 1. 入力画像を用意する
 2. 必要なら前処理する
-3. 複数プリセットで SVG 化する
-4. 実行時間や複雑度を集計する
-5. 比較しやすい Markdown レポートを生成する
+3. 固定プリセットで SVG 化する
+4. 指標を集計する
+5. 比較レポートを生成する
 
-## 現在のスクリプト
+## ✨ 特徴
+- `poster` から `detail` まで複数の VTracer プリセットを比較可能
+- 画像端からつながる明るい背景だけを抜く前処理
+- 実行時間・SVG サイズ・パス数・色数・出力寸法を集計
+- ローカル画像や生成物を Git に含めない安全設計
+- GitHub Pages 前提の公開ドキュメント
 
-- `scripts/remove_edge_background.py`
-  画像の端からつながる明るい背景を flood fill で抜き、透過 PNG を保存します。
-- `scripts/vtracer_experiments.py`
-  複数の VTracer プリセットをまとめて実行し、`experiment_summary.csv` を出力します。
-- `scripts/build_vtracer_report.py`
-  CSV から Markdown レポートを作り、代表 SVG をそのまま埋め込み表示します。
-
-## クイックスタート
-
-まず UV で依存を入れます。
+## 🚀 クイックスタート
+依存関係を入れます。
 
 ```powershell
 uv sync
+npm install
 ```
 
-必要なら背景除去を実行します。
+必要なら背景除去を行います。
 
 ```powershell
 uv run python scripts/remove_edge_background.py --inputs path/to/image1.png path/to/image2.jpg
@@ -52,34 +66,53 @@ VTracer 実験を回します。
 uv run python scripts/vtracer_experiments.py --inputs output/preprocessed/image1.nobg.png output/preprocessed/image2.nobg.png
 ```
 
-Markdown レポートを生成します。
+Markdown 比較レポートを生成します。
 
 ```powershell
 uv run python scripts/build_vtracer_report.py
 ```
 
-生成物はデフォルトで `output/` に保存され、Git には含めません。
+ドキュメントサイトをビルドします。
 
-## 現在集計している指標
+```powershell
+npm run docs:build
+```
 
+## 🗂 リポジトリ構成
+```text
+.
+|- datasets/                  # 任意の比較用データセット配置先
+|- docs/                      # 英日対応の VitePress ドキュメント
+|- scripts/                   # 前処理・実験・レポート生成スクリプト
+|- output/                    # ローカル生成物（Git 管理外）
+|- pyproject.toml             # UV / Python 設定
+`- package.json               # Docs ツール設定
+```
+
+## 📊 現在の指標
 - プリセットごとの実行時間
 - 出力 SVG サイズ
 - パス数
 - fill 色数
 - 出力の幅と高さ
 
-まだ完全なベンチマークではありませんが、比較の基準線としてはかなり使える状態です。
+まだ完全な評価系ではありませんが、再現可能な比較基盤としては十分に使える状態です。
 
-## 今後の拡張候補
-
+## 🛣 今後の拡張
 - VTracer 以外の runner を追加する
-- ロゴ、キャラクター、写真、線画、図表などのデータセット分類を作る
-- render-back での画像比較指標を足す
+- ロゴ、キャラクター、線画、写真、図表などのカテゴリを整備する
+- render-back 比較や視覚差分を足す
 - fidelity と editability を分けて評価する
-- ベンチマーク設定を versioned に保つ
+- runner / preset 設定の形式を固める
 
-## リポジトリ方針
+## 📚 ドキュメント
+- 公開サイト: [sunwood-ai-labs.github.io/img2svg-bench](https://sunwood-ai-labs.github.io/img2svg-bench/)
+- ローカル入口: [docs/ja/index.md](./docs/ja/index.md)
 
-- ローカル生成物は `output/` に置き、コミットしません
-- ローカル画像や私物画像はデフォルトで公開しません
-- 任意の画像を持ち込んでローカルで比較レポートを作れる構成にします
+## 🧭 リポジトリ方針
+- ローカル生成物は `output/` に保存し、コミットしません
+- 私物画像や非公開画像はデフォルトで公開しません
+- 手元の画像を持ち込んでローカルで比較できる構成を維持します
+
+## ⚖️ ライセンス
+このリポジトリは [MIT License](./LICENSE) で公開します。

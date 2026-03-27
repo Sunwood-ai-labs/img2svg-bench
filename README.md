@@ -1,43 +1,57 @@
-# img2svg-bench
+<div align="center">
+  <img src="./docs/public/logo.svg" alt="img2svg-bench logo" width="140" />
+  <h1>img2svg-bench</h1>
+  <p><strong>A local-first benchmark harness for image-to-SVG tools, presets, and preprocessing pipelines.</strong></p>
+  <p>
+    <a href="https://github.com/Sunwood-ai-labs/img2svg-bench/actions/workflows/ci.yml"><img src="https://github.com/Sunwood-ai-labs/img2svg-bench/actions/workflows/ci.yml/badge.svg" alt="CI" /></a>
+    <a href="https://sunwood-ai-labs.github.io/img2svg-bench/"><img src="https://img.shields.io/badge/docs-GitHub%20Pages-0f766e" alt="Docs" /></a>
+    <a href="./LICENSE"><img src="https://img.shields.io/badge/license-MIT-14b8a6" alt="MIT License" /></a>
+    <img src="https://img.shields.io/badge/python-3.11%2B-334155" alt="Python 3.11+" />
+    <img src="https://img.shields.io/badge/uv-managed-0ea5e9" alt="uv managed" />
+    <img src="https://img.shields.io/badge/docs-VitePress-f59e0b" alt="VitePress docs" />
+  </p>
+  <p>
+    <strong>Language:</strong>
+    <a href="./README.md">English</a> |
+    <a href="./README.ja.md">日本語</a>
+  </p>
+</div>
 
-[日本語版](./README.ja.md)
+## 🔍 Overview
+`img2svg-bench` is a reproducible benchmark repository for comparing raster-image-to-SVG pipelines.
 
-`img2svg-bench` is a local-first benchmark repository for comparing image-to-SVG tools, presets, and preprocessing pipelines.
-
-Right now the repository focuses on a reproducible VTracer baseline:
+The repository currently ships a polished VTracer baseline with:
 
 - optional bright-edge background removal
-- multiple VTracer presets
-- CSV summaries
-- Markdown reports with embedded SVG render previews
+- multiple preset runs against the same inputs
+- CSV summaries for timing and SVG complexity
+- Markdown reports with embedded SVG previews
+- bilingual documentation for setup, methodology, and extension
 
-## Why This Repo Exists
+## 🎯 Why It Exists
+Image-to-SVG work is often judged by eye alone, but a useful benchmark needs repeatable inputs, stable presets, and metrics that can be regenerated locally.
 
-Image-to-SVG comparisons are usually judged by eye, but benchmark work needs repeatable inputs and measurable outputs.
+This repository focuses on that benchmark loop:
 
-This repository is meant to make comparisons easier by keeping the workflow scriptable:
-
-1. prepare input images
+1. prepare one or more input images
 2. optionally preprocess them
-3. run one or more SVG conversion presets
-4. collect timing and SVG complexity metrics
-5. generate a browsable Markdown report
+3. run a fixed set of SVG conversion presets
+4. collect measurable outputs
+5. generate a browsable comparison report
 
-## Current Scripts
+## ✨ Features
+- multiple VTracer presets ranging from `poster` to `detail`
+- background removal that preserves interior bright regions by flood-filling from the image edge
+- benchmark summaries with runtime, file size, path count, unique fill count, and output dimensions
+- local-first workflow that keeps private inputs and generated artifacts out of Git by default
+- GitHub Pages-ready docs for public project onboarding
 
-- `scripts/remove_edge_background.py`
-  Flood-fills bright border-connected background and saves transparent PNGs.
-- `scripts/vtracer_experiments.py`
-  Runs several VTracer presets against one or more input images and writes `experiment_summary.csv`.
-- `scripts/build_vtracer_report.py`
-  Builds a Markdown report from the CSV and embeds representative SVG outputs directly.
-
-## Quick Start
-
-Install dependencies with UV:
+## 🚀 Quick Start
+Install dependencies:
 
 ```powershell
 uv sync
+npm install
 ```
 
 Optional preprocessing:
@@ -52,34 +66,53 @@ Run VTracer experiments:
 uv run python scripts/vtracer_experiments.py --inputs output/preprocessed/image1.nobg.png output/preprocessed/image2.nobg.png
 ```
 
-Build the Markdown report:
+Build the Markdown comparison report:
 
 ```powershell
 uv run python scripts/build_vtracer_report.py
 ```
 
-Outputs are written under `output/` by default and are intentionally ignored from Git.
+Build the docs site:
 
-## Metrics Collected Today
+```powershell
+npm run docs:build
+```
 
+## 🗂 Repository Layout
+```text
+.
+|- datasets/                  # Optional repo-managed benchmark datasets
+|- docs/                      # Bilingual VitePress documentation
+|- scripts/                   # Preprocessing, experiment, and report builders
+|- output/                    # Local generated artifacts (ignored)
+|- pyproject.toml             # UV / Python project metadata
+`- package.json               # Docs tooling metadata
+```
+
+## 📊 Metrics Collected Today
 - runtime per preset
 - output SVG size
 - path count
 - unique fill count
 - output width and height
 
-These are not enough for a full benchmark yet, but they provide a strong starting baseline.
+These metrics are intentionally simple, but they make benchmark runs easy to compare and automate.
 
-## What Should Come Next
-
+## 🛣 Roadmap
 - add more runners beyond VTracer
-- define dataset categories such as logos, characters, photos, line art, and diagrams
-- add render-back image metrics
-- separate fidelity metrics from editability metrics
-- keep benchmark configs versioned and reproducible
+- introduce dataset categories such as logos, characters, line art, photos, and diagrams
+- add render-back image metrics and visual diff workflows
+- separate fidelity scoring from editability scoring
+- formalize runner and preset configuration formats
 
-## Repository Policy
+## 📚 Docs
+- Site: [sunwood-ai-labs.github.io/img2svg-bench](https://sunwood-ai-labs.github.io/img2svg-bench/)
+- Local docs entry: [docs/index.md](./docs/index.md)
 
+## 🧭 Repository Policy
 - local benchmark artifacts live under `output/` and are not committed
-- local/private input images are not published by default
-- the repository is structured so you can bring your own images and generate reports locally
+- local or private sample images are not published by default
+- benchmark scripts are designed to run against your own local inputs
+
+## ⚖️ License
+This repository is released under the [MIT License](./LICENSE).
