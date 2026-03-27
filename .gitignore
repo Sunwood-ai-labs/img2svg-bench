@@ -1,0 +1,8 @@
+.venv/
+output/
+__pycache__/
+*.pyc
+.DS_Store
+Thumbs.db
+kiyoka_1.png
+kiyoka_2.png
